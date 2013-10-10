@@ -1,0 +1,35 @@
+{
+  "name": "redrocket-repository",
+  "version": "0.0.0",
+  "description": "Repository abstraction over various storage mechanisms",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/redrockethq/redrocket-repository.git"
+  },
+  "keywords": [
+    "repository",
+    "validation"
+  ],
+  "author": "Tyler Garlick, RedRocket",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/redrockethq/redrocket-repository/issues"
+  },
+  "dependencies": {
+    "dbc.js": "~1.0.1",
+    "node-uuid": "~1.4.1",
+    "lodash": "~2.2.1",
+    "minioc-loader": "~0.3.0"
+  },
+  "devDependencies": {
+    "expect.js": "~0.2.0",
+    "mocha": "~1.12.0"
+  }
+}
