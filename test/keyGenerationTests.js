@@ -1,20 +1,19 @@
 'use strict';
 
 var expect = require('expect.js')
-  , Strategies = require('../../lib/keys')
+  , Strategies = require('../lib/keys')
   ;
 
 describe('GuidStrategy', function () {
-  var guidStrategy = new Strategies.GuidStrategy();
+  var strategy = new Strategies.GuidStrategy();
   describe('#generate()', function () {
     it('should setup properly', function () {
-      expect(guidStrategy).to.be.ok();
-      console.log(guidStrategy.id);
-      expect(guidStrategy.key).to.be('id');
+      expect(strategy).to.be.ok();
+      expect(strategy.key).to.be('id');
     });
 
     it('should generate key', function () {
-      var key = guidStrategy.generate();
+      var key = strategy.generate();
       console.log(key);
       expect(key).to.be.ok();
     });
@@ -22,14 +21,15 @@ describe('GuidStrategy', function () {
 });
 
 describe('TokenStrategy', function () {
-  var tokenStrategy = new Strategies.TokenStrategy();
+  var strategy = new Strategies.TokenStrategy();
   describe('#generate()', function () {
     it('should setup properly', function () {
-      expect(tokenStrategy).to.be.ok();
+      expect(strategy).to.be.ok();
+      expect(strategy.key).to.be('id');
     });
 
     it('should generate key', function () {
-      var key = tokenStrategy.generate();
+      var key = strategy.generate();
       console.log(key);
       expect(key).to.be.ok();
     });
@@ -37,19 +37,20 @@ describe('TokenStrategy', function () {
 });
 
 describe('SlugStrategy', function () {
-  var slugStrategy = new Strategies.SlugStrategy();
+  var strategy = new Strategies.SlugStrategy();
   describe('#generate(name)', function () {
     it('should setup properly', function () {
-      expect(slugStrategy).to.be.ok();
+      expect(strategy).to.be.ok();
+      expect(strategy.key).to.be('id');
     });
     it('name should be required', function () {
       expect(function () {
-        slugStrategy.generate();
+        strategy.generate();
       }).to.throwError()
     });
 
     it('should generate key', function () {
-      var key = slugStrategy.generate("This is my fawesome slug");
+      var key = strategy.generate("This is my fawesome slug");
       console.log(key);
       expect(key).to.be.ok();
     });
